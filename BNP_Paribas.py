@@ -25,9 +25,9 @@ def turn_dumies(data):
 turn_dumies(data)
 X = data.values
 #start modeling
-xg = xgb.XGBClassifier(learning_rate=0.01)
-rf=RandomForestClassifier(n_estimators=100,max_depth=3)
-extra=ExtraTreesClassifier(n_estimators=100,max_depth=3)
+xg = xgb.XGBClassifier(n_estimators=1000 ,learning_rate=0.01)
+rf=RandomForestClassifier(n_estimators=1000,max_depth=3)
+extra=ExtraTreesClassifier(n_estimators=1000,max_depth=3)
 models = [xg,extra,rf]
 split = StratifiedKFold(y,n_folds=3)
 for k , (train,test) in enumerate(split):
